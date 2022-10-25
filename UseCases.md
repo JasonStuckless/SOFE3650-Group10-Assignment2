@@ -1,6 +1,6 @@
-|   Use Case    |   Description   |
-|   ---         |   ---           |
-|   UC-01   |   A Cashier starts and ends a product purchasing session at any time.  A session is started via the keyboard.  When a session is cancelled, all items that were scanned in that session are nullified.    |
+|   Use Case    |   Description   |   Associated Requirements   |
+|   ---         |   ---           |   ---           |
+|   UC-01   |   A Cashier starts and ends a product purchasing session at any time.  A session is started via the keyboard.  When a session is cancelled, all items that were scanned in that session are nullified.    |   R-01, R-02    |
 |   UC-02   |   A barcode scanner is used to scan items which are then shown on the display by name and price.  If a product is not identified by the barcode scanner, "Unknown Product" is shown on the display.   |
 |   UC-03   |   A Cashier enters a product in manually via the keyboard, and its name and price are shown on the display.   |
 |   UC-04   |   A Cashier chooses to cancelled a scanned product from the list via the keyboard.  The item to be cancelled is then identified manually via the keyboard or using the barcode scanner.    |
