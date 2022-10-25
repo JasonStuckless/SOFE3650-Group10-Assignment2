@@ -24,6 +24,12 @@ $ javac *.java
 $ java Application
 ```
 
+In the first screen, hit enter to start a new session. To simulate the scanner,
+hit the numbers from 1 to 4 to add the products to the list. You can add as
+many products as you want. if you need to remove a product, hit 'x' in the
+keyboard. Once the "scanning" is done, hit "enter" again to finish the session
+and proceed to checkout. During the transitions, you can check the console for
+messages about the application internals.
 
 
 ### Application demo

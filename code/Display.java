@@ -5,6 +5,7 @@ public class Display {
   static JFrame frameScan = new JFrame("Scan");
   static JFrame frameCheckout = new JFrame("Checkout");
   static JLabel labelTotal = new JLabel("Total: ");
+  static JLabel labelAmount = new JLabel();
   static int defaultHeight = 400;
   static int defaultWidth = 400;
   static DefaultListModel<String> display = new DefaultListModel<>();
@@ -29,8 +30,12 @@ public class Display {
     frameCheckout.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frameCheckout.setVisible(false);
     frameCheckout.setLayout(null);
+    frameCheckout.setSize(defaultHeight,defaultWidth);
     JLabel label = new JLabel("<html><font size=33>Checkout</font><br><br>Proceed to payment</html>");
-    JLabel total = new JLabel("Total amount: " + Session.total());
+    label.setBounds(100,10,400,200);
+    labelAmount.setBounds(100,150,400,200);
+    frameCheckout.add(label);
+    frameCheckout.add(labelAmount);
   }
   
   public static void addToDisplay(String item) {
@@ -59,6 +64,7 @@ public class Display {
 
   public static void checkOut() {
     hideAllFrames();
+    labelAmount.setText("Total amount: " + Session.total());
     frameCheckout.setVisible(true);
   }
 

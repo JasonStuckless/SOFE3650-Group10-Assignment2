@@ -9,6 +9,8 @@ public class Keyboard {
         int keyCode = e.getKeyCode();
         if (keyCode == KeyEvent.VK_ENTER) {
           if (Session.isSessionStarted()) {
+            Session.end();
+            Display.checkOut();
           } else {
             System.out.println("New session");
             Session.start();
