@@ -4,7 +4,11 @@ public class Session {
   static double calculate = 0;
   static ArrayList<String> checkout = new ArrayList<String>();
   static ArrayList<Double> price = new ArrayList<Double>();
-
+  static boolean started = false;
+  
+  public Boolean isSessionStarted() {
+    return started;
+  }
   public static void addProduct(String productName, double productPrice ) {
     checkout.add(productName);
     price.add(productPrice);
@@ -20,10 +24,14 @@ public class Session {
   }
 
   public static double total()	{
-    return calculate;
+    return Math.round(calculate);
   }
 
-  public static void start()	{
+  public void start()	{
     checkout.clear();
+    started = true;
+  }
+  public void end() {
+      started = false;
   }
 }
