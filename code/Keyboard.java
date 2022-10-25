@@ -9,8 +9,11 @@ public class Keyboard {
         int keyCode = e.getKeyCode();
         if (keyCode == KeyEvent.VK_ENTER) {
           System.out.println("New session");
-          Display.startScanning();
+          Session.start();
+          Display.start();
         } else if (keyCode == KeyEvent.VK_X) {
+          Session.remove();
+          Display.remove();
           System.out.println("Delete");
         }
         else {

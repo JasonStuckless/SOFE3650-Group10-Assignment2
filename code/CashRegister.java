@@ -36,6 +36,7 @@ public class CashRegister {
       }
     }
 
+    Session.addProduct(productName, Double.parseDouble(productPrice));
     Display.displayProductInfo(productName, productPrice);
   }
 }

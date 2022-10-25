@@ -3,30 +3,39 @@ import javax.swing.*;
 public class Display {
   static JFrame frameStart = new JFrame("StartSession");
   static JFrame frameScan = new JFrame("Scan");
+  static JFrame frameCheckout = new JFrame("Checkout");
+  static JLabel labelTotal = new JLabel("Total: ");
   static int defaultHeight = 400;
   static int defaultWidth = 400;
   static DefaultListModel<String> display = new DefaultListModel<>();
 
   public static void createFrameScan() {
-    JLabel label = new JLabel("<html>Start scanning the products</html>");
+    JLabel label = new JLabel("<html>Start scanning the products<br><font color=red>hit enter to checkout</font></html>");
     frameScan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frameScan.setVisible(false);
     frameScan.setLayout(null);
     frameScan.setSize(defaultHeight,defaultWidth);
     JList<String> list = new JList<>(display);
-    list.setBounds(0,40,400,400);
-    label.setBounds(10,20,400,30);
+    list.setBounds(10,40,400,200);
+    label.setBounds(10,0,400,30);
+    labelTotal.setBounds(10,250,400,30);
     frameScan.add(list);
     frameScan.add(label);
+    frameScan.add(labelTotal);
     Keyboard.initKeyboard(frameScan);
+  }
+
+  public static void createFrameCheckout() {
   }
   
   public static void addToDisplay(String item) {
+    labelTotal.setText("Total: " + Session.total());
     display.addElement(item);
   }
 
-  public static void removeFromDisplay(String item) {
-    display.removeElement(item);
+  public static void remove() {
+    labelTotal.setText("Total: " + Session.total());
+    display.remove(display.size()-1);
   }
 
   public static void createFrameStart() {
@@ -35,15 +44,15 @@ public class Display {
     JLabel labelInstruction = new JLabel("Press enter to start a new session");
     frameStart.setLayout(null);
     label.setBounds(50,0,400, 100);
-    labelInstruction.setBounds(50, 140, 200, 200);
-    frameStart.getContentPane().add(label);
-    frameStart.getContentPane().add(labelInstruction);
+    labelInstruction.setBounds(10, 140, 300, 200);
+    frameStart.add(label);
+    frameStart.add(labelInstruction);
     frameStart.setSize(defaultHeight,defaultWidth);
     frameStart.setVisible(true);
     Keyboard.initKeyboard(frameStart);
   }
 
-  public static void startScanning() {
+  public static void start() {
     hideAllFrames();
     frameScan.setVisible(true);
     frameScan.requestFocus();
@@ -52,6 +61,7 @@ public class Display {
   public static void hideAllFrames() {
     frameStart.setVisible(false);
     frameScan.setVisible(false);
+    frameCheckout.setVisible(false);
   }
 
   public static void displayProductInfo(String productName, String productPrice) {

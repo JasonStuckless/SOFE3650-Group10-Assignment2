@@ -5,6 +5,7 @@ public class Application {
   private static void createAndShowGUI() {
     Display.createFrameStart();
     Display.createFrameScan();
+    Display.createFrameCheckout();
   }
 
   public static void main(String[] args) {
