@@ -21,6 +21,7 @@ public class Session {
     checkout.remove(size-1);
     int last = price.size();
     double rm = price.get(last-1);
+    price.remove(last-1);
     calculate -= rm;
   }
 
