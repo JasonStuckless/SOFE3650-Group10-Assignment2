@@ -25,7 +25,8 @@ public class Session {
   }
 
   public static double total()	{
-    return Math.round(calculate);
+    double rounded = Math.round(calculate * 100.0) / 100.0;
+    return rounded;
   }
 
   public static void start()	{
