@@ -39,12 +39,12 @@ public class Display {
   }
   
   public static void addToDisplay(String item) {
-    labelTotal.setText("Total: " + Session.total());
+    labelTotal.setText("Total: $" + Session.total());
     display.addElement(item);
   }
 
   public static void remove() {
-    labelTotal.setText("Total: " + Session.total());
+    labelTotal.setText("Total: $" + Session.total());
     display.remove(display.size()-1);
   }
 
@@ -64,7 +64,7 @@ public class Display {
 
   public static void checkOut() {
     hideAllFrames();
-    labelAmount.setText("Total amount: " + Session.total());
+    labelAmount.setText("Total amount: $" + Session.total());
     frameCheckout.setVisible(true);
   }
 
