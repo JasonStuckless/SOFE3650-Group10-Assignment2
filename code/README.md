@@ -8,6 +8,14 @@ and displayed. The operator can also delete the last item using the keyboard.
 
 ### Description of the files
 
+| File | Description |
+| ----------- | ----------- |
+| Application.java | Main program to simulate the GUI |
+| Display.java | Simulate the display by adding/removing texts such as the product and price|
+| CashRegister.java | Fetch the product and price once scanned |
+| Keyboard.java | Listen the keyboard to receive the products and other commands |
+| Session.java | Handle a session: start, add and remove products, calculate the total amount |
+| products.txt | Local product's database |
 
 ### Compiling and Running
 
@@ -16,12 +24,16 @@ $ javac *.java
 $ java Application
 ```
 
+
+
 ### Application demo
 
-| File | Description |
-| ----------- | ----------- |
-| Application.java | Main program to simulate the GUI |
-| Display.java | Simulate the display by adding/removing texts such as the product and price|
-| CashRegister.java | Fetch the product and price once scanned |
-| Keyboard.java | Listen the keyboard to receive the products and other commands |
+1. The application is initialized and wait for the operator to start a new
+   session. The product's datbase is loaded from the local file products.txt
 
+2. When a new session is started, the operator scan the barcodes to add items,
+   and the total amount is calculated and displayed in the screen. You can
+   simulate the scanner by pressing the keys in the keyboard to add items (1
+   for Bananas, 2 to Apples etc).
+
+3. The operator can delete an item by pressing 'x' in the keyboard.

@@ -26,6 +26,11 @@ public class Display {
   }
 
   public static void createFrameCheckout() {
+    frameCheckout.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frameCheckout.setVisible(false);
+    frameCheckout.setLayout(null);
+    JLabel label = new JLabel("<html><font size=33>Checkout</font><br><br>Proceed to payment</html>");
+    JLabel total = new JLabel("Total amount: " + Session.total());
   }
   
   public static void addToDisplay(String item) {
@@ -44,12 +49,17 @@ public class Display {
     JLabel labelInstruction = new JLabel("Press enter to start a new session");
     frameStart.setLayout(null);
     label.setBounds(50,0,400, 100);
-    labelInstruction.setBounds(10, 140, 300, 200);
+    labelInstruction.setBounds(50, 140, 300, 200);
     frameStart.add(label);
     frameStart.add(labelInstruction);
     frameStart.setSize(defaultHeight,defaultWidth);
     frameStart.setVisible(true);
     Keyboard.initKeyboard(frameStart);
+  }
+
+  public static void checkOut() {
+    hideAllFrames();
+    frameCheckout.setVisible(true);
   }
 
   public static void start() {
