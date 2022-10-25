@@ -1,19 +1,22 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Session {
     double calculate = 0;
-	HashMap<String, Float> checkout = new HashMap<String, Float>();
+	ArrayList<String> checkout = new ArrayList<String>();
 	public void addProduct(String productName, float productPrice ) {
-	    checkout.put(productName, productPrice);
+		String concatProduct = productName + productPrice;
+	    checkout.add(concatProduct);
 	    calculate += productPrice;
-	    System.out.println(checkout);
 	}
-	public void remove(String name)	{
-		double val = checkout.get(name);
-		checkout.remove(name);
+	public void remove()	{
+		double val = checkout.size();
+		checkout.remove(val);
 		calculate -= val;
 	}
 	public double total()	{
 		return calculate;
+	}
+	public void start()	{
+	checkout.clear();
 	}
 }
