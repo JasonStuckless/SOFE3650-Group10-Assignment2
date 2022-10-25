@@ -1,4 +1,4 @@
-# SOFE3650F19 - Group 10
+# SOFE3650 - Group 10
 
 ### Assignment 2
 
