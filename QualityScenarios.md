@@ -1,3 +1,3 @@
-|   Quality Scenario    |   Quality Attribute   |   Scenario   |    Associated Use Case   |
+|   Quality Scenario    |   Quality Attribute   |   Scenario   |    Associated Requirements  |
 |   ---   |   ---   |   ---   |   ---   |
 |   QS-01   |   
