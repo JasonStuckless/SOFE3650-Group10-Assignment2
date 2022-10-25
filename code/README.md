@@ -43,3 +43,7 @@ messages about the application internals.
    for Bananas, 2 to Apples etc).
 
 3. The operator can delete an item by pressing 'x' in the keyboard.
+
+4. Once the operator finishes scanning all products, the session can be
+   finished by pressing the key 'enter', and the application will initialize
+   the payment step.
