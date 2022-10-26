@@ -32,7 +32,7 @@ and proceed to checkout. During the transitions, you can check the console for
 messages about the application internals.
 
 
-### Application demo
+### Application demo ([Screenshots](Screenshots.md))
 
 1. The application is initialized and wait for the operator to start a new
    session. The product's datbase is loaded from the local file products.txt
